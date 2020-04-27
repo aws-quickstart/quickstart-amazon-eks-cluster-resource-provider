@@ -58,7 +58,7 @@ func makeCreateClusterInput(model *Model) *eks.CreateClusterInput {
 		Name: model.Name,
 		ResourcesVpcConfig: &eks.VpcConfigRequest{
 			SubnetIds:             aws.StringSlice(model.ResourcesVpcConfig.SubnetIds),
-			EndpointPublicAccess:  aws.Bool(true),
+			EndpointPublicAccess:  model.ResourcesVpcConfig.EndpointPublicAccess,
 			EndpointPrivateAccess: model.ResourcesVpcConfig.EndpointPrivateAccess,
 		},
 		Logging:          createLogging(model),
