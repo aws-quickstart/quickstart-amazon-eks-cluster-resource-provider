@@ -1,6 +1,6 @@
 # AWSQS::EKS::Cluster
 
-A resource that creates EKS clusters.
+A resource that creates Amazon Elastic Kubernetes Service (Amazon EKS) clusters.
 
 ## Syntax
 
@@ -43,7 +43,7 @@ Properties:
 
 #### Name
 
-The unique name to give to your cluster.
+A unique name for your cluster.
 
 _Required_: No
 
@@ -53,7 +53,7 @@ _Update requires_: [Replacement](https://docs.aws.amazon.com/AWSCloudFormation/l
 
 #### RoleArn
 
-The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf.
+Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role. This provides permissions for Amazon EKS to call other AWS APIs.
 
 _Required_: Yes
 
@@ -63,7 +63,7 @@ _Update requires_: [Replacement](https://docs.aws.amazon.com/AWSCloudFormation/l
 
 #### Version
 
-The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used.
+Desired Kubernetes version for your cluster. If you don't specify this value, the cluster uses the latest version from Amazon EKS.
 
 _Required_: No
 
@@ -73,7 +73,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourcesVpcConfig
 
-An object representing the VPC configuration to use for an Amazon EKS cluster.
+An object that represents the virtual private cloud (VPC) configuration to use for an Amazon EKS cluster.
 
 
 
@@ -85,7 +85,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnabledClusterLoggingTypes
 
-Enable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. Valid log types are api, audit, authenticator, controllerManager and scheduler
+Enables exporting of logs from the Kubernetes control plane to Amazon CloudWatch Logs. By default, logs from the cluster control plane are not exported to CloudWatch Logs. The valid log types are api, audit, authenticator, controllerManager, and scheduler.
 
 _Required_: No
 
@@ -95,7 +95,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EncryptionConfig
 
-The encryption configuration for the cluster.
+Encryption configuration for the cluster.
 
 _Required_: No
 
@@ -115,35 +115,35 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 ### Ref
 
-When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the Name.
+When you pass the resource's logical ID to the intrinsic `Ref` function, `Ref` returns the name.
 
 ### Fn::GetAtt
 
-The `Fn::GetAtt` intrinsic function returns a value for a specified attribute of this type. The following are the available attributes and sample return values.
+`Fn::GetAtt` intrinsic function returns a value for a specified attribute of this type. The following are the available attributes and samples of return values.
 
 For more information about using the `Fn::GetAtt` intrinsic function, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html).
 
 #### Arn
 
-The ARN of the cluster, such as arn:aws:eks:us-west-2:666666666666:cluster/prod.
+ARN of the cluster (e.g., `arn:aws:eks:us-west-2:666666666666:cluster/prod`).
 
 #### Endpoint
 
-The endpoint for your Kubernetes API server, such as https://5E1D0CEXAMPLEA591B746AFC5AB30262.yl4.us-west-2.eks.amazonaws.com.
+Endpoint for your Kubernetes API server (e.g., https://5E1D0CEXAMPLEA591B746AFC5AB30262.yl4.us-west-2.eks.amazonaws.com).
 
 #### ClusterSecurityGroupId
 
-The cluster security group that was created by Amazon EKS for the cluster. Managed node groups use this security group for control plane to data plane communication.
+Security group that was created by Amazon EKS for your cluster. Managed-node groups use this security group for control-plane-to-data-plane communications.
 
 #### CertificateAuthorityData
 
-The certificate-authority-data for your cluster.
+Certificate-authority data for your cluster.
 
 #### EncryptionConfigKeyArn
 
-Amazon Resource Name (ARN) or alias of the customer master key (CMK).
+ARN or alias of the customer master key (CMK).
 
 #### OIDCIssuerURL
 
-The issuer URL for the OpenID Connect identity provider.
+Issuer URL for the OpenID Connect identity provider.
 

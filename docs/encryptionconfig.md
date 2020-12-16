@@ -1,6 +1,6 @@
 # AWSQS::EKS::Cluster EncryptionConfig
 
-AWS Key Management Service (AWS KMS) customer master key (CMK). Either the ARN or the alias can be used.
+AWS Key Management Service (AWS KMS) customer master key (CMK). Either the Amazon Resource Name (ARN) or the alias can be used.
 
 ## Syntax
 
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### KeyArn
 
-Amazon Resource Name (ARN) or alias of the customer master key (CMK). The CMK must be symmetric, created in the same region as the cluster, and if the CMK was created in a different account, the user must have access to the CMK.
+ARN or alias of the CMK. The CMK must be symmetric and created in the same Region as the cluster. If the CMK was created using a different account, the user must have access to the CMK.
 
 _Required_: No
 
